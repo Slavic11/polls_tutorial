@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'calculator/base.html' %}
+
+{% block content %}
 
 <form action="{% url 'polls:vote' question.id %}" method="post">
 {% csrf_token %}
@@ -19,5 +15,4 @@
 <input type="submit" value="Vote">
 </form>
 
-</body>
-</html>
+{% endblock %}

@@ -6,6 +6,9 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+from users.models import User
+
+
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
     pub_date = models.DateTimeField('date published')
@@ -27,8 +30,8 @@ class Choice(models.Model):
 
 
 #class UserVote(models.Model):
-#    user = models.ForeignKey('User', on_delete=models.CASCADE)
-#    vote = models.ForeignKey(Choice)
-
-    def __str__(self):
-        return self.choice_text
+#    user = models.ForeignKey(User, on_delete=models.CASCADE)
+#    vote = models.ForeignKey(Choice, on_delete=models.CASCADE)
+#
+#   def __str__(self):
+#        return self.choice_text
